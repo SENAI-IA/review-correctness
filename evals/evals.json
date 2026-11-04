@@ -1,0 +1,42 @@
+{
+  "skill": "review-correctness",
+  "gatilho": [
+    {
+      "prompt": "revisa a correção deste arquivo",
+      "esperado": "dispara"
+    },
+    {
+      "prompt": "procura bugs de lógica aqui",
+      "esperado": "dispara"
+    },
+    {
+      "prompt": "esse código está certo?",
+      "esperado": "dispara"
+    },
+    {
+      "prompt": "explica o que essa função faz",
+      "esperado": "nao-dispara"
+    },
+    {
+      "prompt": "revisa a segurança deste arquivo",
+      "esperado": "nao-dispara"
+    }
+  ],
+  "casos": [
+    {
+      "id": 1,
+      "entrada": "def list_items(conn, page, size=20):\n    \"\"\"page começa em 1\"\"\"\n    offset = page * size\n    return conn.execute('SELECT * FROM t LIMIT ? OFFSET ?', (size, offset)).fetchall()",
+      "esperado": "achado linha 3, paginação 1-based pula a primeira página"
+    },
+    {
+      "id": 2,
+      "entrada": "def handle(conn, event_id, amount):\n    conn.execute('INSERT OR REPLACE INTO events(id) VALUES (?)', (event_id,))\n    conn.execute('UPDATE acc SET bal = bal + ?', (amount,))",
+      "esperado": "achado linhas 2-3, reenvio do mesmo event_id credita duas vezes"
+    },
+    {
+      "id": 3,
+      "entrada": "from datetime import datetime, timezone\ndef now_utc():\n    return datetime.now(timezone.utc)",
+      "esperado": "nenhum achado"
+    }
+  ]
+}
