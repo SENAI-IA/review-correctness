@@ -1,0 +1,7 @@
+[
+  {"prompt": "o summarize do correctness-e02-02.py está devolvendo total zero, tem bug aí?", "esperado": "dispara"},
+  {"prompt": "esse código está certo? correctness-e02-03.py", "esperado": "dispara"},
+  {"prompt": "antes do merge, confere se a lógica do correctness-e02-01.py funciona em todos os casos", "esperado": "dispara"},
+  {"prompt": "explica o que essa função faz: correctness-e02-02.py", "esperado": "nao-dispara"},
+  {"prompt": "essa query do correctness-e02-04-limpo.py está protegida contra SQL injection?", "esperado": "nao-dispara"}
+]

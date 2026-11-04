@@ -1,0 +1,7 @@
+[
+  {"prompt": "revisa a correção deste arquivo", "esperado": "dispara"},
+  {"prompt": "procura bugs de lógica aqui", "esperado": "dispara"},
+  {"prompt": "esse código está certo?", "esperado": "dispara"},
+  {"prompt": "explica o que essa função faz", "esperado": "nao-dispara"},
+  {"prompt": "revisa a segurança deste arquivo", "esperado": "nao-dispara"}
+]
